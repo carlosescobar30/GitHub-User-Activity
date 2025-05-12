@@ -1,4 +1,4 @@
 package com.carlosescobar30.githubactivity;
 
-public class GitHubEvent {
+ public record GitHubEvent (int IdGroupEvent, String type) implements GroupAllEvents {
 }

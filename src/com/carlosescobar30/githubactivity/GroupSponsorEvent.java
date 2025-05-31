@@ -1,4 +1,4 @@
 package com.carlosescobar30.githubactivity;
 
-public record GroupEventN5 (int groupEvent, String type, String sponsored) implements GroupAllEvents {
+public record GroupSponsorEvent(int groupEvent, String type, String action,  String sponsored) implements GroupAllEvents {
 }

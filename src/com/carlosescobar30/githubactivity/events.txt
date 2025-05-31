@@ -1,0 +1,73 @@
+(EN) Events:
+
+"gollum"            : [Creation or update of a wiki page.]
+
+"issue comment"     : [Comment added to an issue.]
+
+"issues"            : [Action performed on an issue (e.g., opened, closed, assigned, labeled).]
+
+"member"            : [User added or removed as a collaborator to a repository.]
+
+"pull request"      : [Action performed on a pull request (e.g., opened, closed, merged, synchronized).]
+
+"pull request review comment" : [Comment added in a pull request code review (directly on the diff).]
+
+"pull request review" : [Pull request review submitted (e.g., approved, changes requested, general comment).]
+
+"pull request review thread" : [Comment thread in a pull request review resolved or reopened.]
+
+"release"           : [A new version (release) of the project published.]
+
+"watch"             : [User starts or stops watching a repository for notifications.]
+
+"commit comment"    : [Comment added to a specific commit.]
+
+"fork"              : [User creates a personal copy (fork) of a repository.]
+
+"public"            : [Private repository made public.]
+
+"create"            : [Creation of a branch or tag in the repository.]
+
+"delete"            : [Deletion of a branch or tag from the repository.]
+
+"push"              : [One or more commits pushed to a repository, updating a branch.]
+
+"sponsorship"       : [Event related to GitHub Sponsors.]
+
+------------------------------------------------------------------------------------------------------------------------------
+
+(ES) Eventos:
+
+"gollum"            : [Creación o actualización de una página wiki.]
+
+"issue comment"     : [Comentario añadido a un issue (incidencia o tarea).]
+
+"issues"            : [Acción realizada sobre un issue (abrir, cerrar, asignar, etiquetar, etc.).]
+
+"member"            : [Usuario añadido o eliminado como colaborador en un repositorio.]
+
+"pull request"      : [Acción realizada sobre un pull request (abrir, cerrar, fusionar, sincronizar, etc.).]
+
+"pull request review comment" : [Comentario añadido en una revisión de código de un pull request (directamente en el diff).]
+
+"pull request review" : [Revisión de un pull request enviada (aprobar, solicitar cambios, comentar en general).]
+
+"pull request review thread" : [Hilo de comentarios en una revisión de pull request resuelto o reabierto.]
+
+"release"           : [Publicación de una nueva versión (release) del proyecto.]
+
+"watch"             : [Usuario comienza o deja de 'observar' (watch) un repositorio para recibir notificaciones.]
+
+"commit comment"    : [Comentario añadido a un commit específico (fuera de un pull request).]
+
+"fork"              : [Usuario crea una copia personal (fork) de un repositorio.]
+
+"public"            : [Repositorio privado hecho público.]
+
+"create"            : [Creación de una rama (branch) o etiqueta (tag) en el repositorio.]
+
+"delete"            : [Eliminación de una rama (branch) o etiqueta (tag) del repositorio.]
+
+"push"              : [Envío (push) de uno o más commits a un repositorio, actualizando una rama.]
+
+"sponsorship"       : [Evento relacionado con GitHub Sponsors.]

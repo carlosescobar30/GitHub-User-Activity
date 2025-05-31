@@ -2,42 +2,48 @@ package com.carlosescobar30.githubactivity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ClassifyEvents {
     private static final Map<String,EventGroups> mapEventByGroup = new HashMap<>();
 
 
     static {
-        //GROUP_N1
-        mapEventByGroup.put("GollumEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("IssueCommentEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("IssuesEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("MemberEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("PullRequestEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("PullRequestReviewCommentEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("PullRequestReviewEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("PullRequestReviewThreadEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("ReleaseEvent",EventGroups.GROUP_N1);
-        mapEventByGroup.put("WatchEvent",EventGroups.GROUP_N1);
+        //GROUP_ACTION
+        mapEventByGroup.put("gollum",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("issue comment",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("issues",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("member",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("pull request",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("pull request review comment",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("pull request review",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("pull request review thread",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("release",EventGroups.GROUP_ACTION);
+        mapEventByGroup.put("watch",EventGroups.GROUP_ACTION);
 
         //GROUP_N2
-        mapEventByGroup.put("CommitCommentEvent",EventGroups.GROUP_N2);
-        mapEventByGroup.put("ForkEvent",EventGroups.GROUP_N2);
-        mapEventByGroup.put("PublicEvent",EventGroups.GROUP_N2);
+        mapEventByGroup.put("commit comment",EventGroups.GROUP_SIMPLE);
+        mapEventByGroup.put("fork",EventGroups.GROUP_SIMPLE);
+        mapEventByGroup.put("public",EventGroups.GROUP_SIMPLE);
 
-        //GROUP_N3
-        mapEventByGroup.put("CreateEvent",EventGroups.GROUP_N3);
-        mapEventByGroup.put("DeleteEvent",EventGroups.GROUP_N3);
+        //GROUP_REF_TYPE
+        mapEventByGroup.put("create",EventGroups.GROUP_REF_TYPE);
+        mapEventByGroup.put("delete",EventGroups.GROUP_REF_TYPE);
 
-        //GROUP_N4
-        mapEventByGroup.put("PushEvent",EventGroups.GROUP_N4);
+        //GROUP_PUSH
+        mapEventByGroup.put("push",EventGroups.GROUP_PUSH);
 
-        //GROUP_N5
-        mapEventByGroup.put("SponsorshipEvent",EventGroups.GROUP_N5);
+        //GROUP_SPONSOR
+        mapEventByGroup.put("sponsorship",EventGroups.GROUP_SPONSOR);
 
     }
 
     public static EventGroups getEventGroup(String eventType){
         return mapEventByGroup.get(eventType);
     }
+
+    public static Set<String> getEventSet (){
+        return mapEventByGroup.keySet();
+    }
+
 }

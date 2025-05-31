@@ -8,16 +8,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class EventOutput {
+public class OutputManagement implements OutputManagementInterface {
 
 
 
-    public static void eventOutput (String gitHubUser, int eventsNumber, String typeEvent){
+    public void eventOutput (String gitHubUser, String typeEvent, int numberEvents)  {
         List<GroupAllEvents> events = EventObjectManagement.eventJsonToObject(gitHubUser);
         int count = 0;
-
         if (!typeEvent.equals("all")){
-            events = EventOutput.filterEvents(typeEvent,events);
+            events = OutputManagement.filterEvents(typeEvent,events);
         }
 
         if (events.isEmpty()){
@@ -26,34 +25,34 @@ public class EventOutput {
         }
 
         System.out.println("The user: ");
-        while (count < eventsNumber){
+        while (count < numberEvents){
 
             GroupAllEvents event = events.get(count);
 
              switch (event){
                 case GroupActionEvent aE ->{
 
-                    EventOutput.showActionEvent((GroupActionEvent) event);
+                    OutputManagement.showActionEvent((GroupActionEvent) event);
                     break;
                 }
 
                 case GroupSimpleEvent sE -> {
-                    EventOutput.showSimpleEvent((GroupSimpleEvent) event);
+                    OutputManagement.showSimpleEvent((GroupSimpleEvent) event);
                     break;
                 }
 
                 case GroupRefTypeEvent rTE -> {
-                    EventOutput.showRefTypeEvent((GroupRefTypeEvent) event);
+                    OutputManagement.showRefTypeEvent((GroupRefTypeEvent) event);
                     break;
                 }
 
                 case GroupPushEvent pE -> {
-                    EventOutput.showPushEvent((GroupPushEvent) event);
+                    OutputManagement.showPushEvent((GroupPushEvent) event);
                     break;
                 }
 
                 case GroupSponsorEvent sE -> {
-                    EventOutput.showSponsorEvent((GroupSponsorEvent) event);
+                    OutputManagement.showSponsorEvent((GroupSponsorEvent) event);
                     break;
                 }
                 default -> {
@@ -67,7 +66,7 @@ public class EventOutput {
             }
         }
 
-        System.out.println("\n" + count + " of the " + eventsNumber + " requested records were found");
+        System.out.println("\n" + count + " of the " + numberEvents + " requested records were found");
     }
 
     private static void showActionEvent (GroupActionEvent event) {
@@ -78,34 +77,34 @@ public class EventOutput {
                 if (event.action().equals("opened")) {
                     msjI = " a new issue on ";
                 }
-                String capActionIE = EventOutput.capitalize(event.action());
+                String capActionIE = OutputManagement.capitalize(event.action());
                 System.out.println(capActionIE + msjI + event.repo());
                 break;
 
             case "release":
                 String msjR = event.action().equals("published") ? " a new " + event.type() + " on " : " a " + event.type() + " on ";
-                String capActionR = EventOutput.capitalize(event.action());
+                String capActionR = OutputManagement.capitalize(event.action());
                 System.out.println(capActionR + msjR + event.repo() );
                 break;
 
             case "pull request":
                 String msjPR = event.action().equals("opened") ? " a new " + event.type() + " on " : " a " + event.type() + " on ";
-                String capActionPR = "review_requested".equals(event.action()) ? "Requested a review for" : EventOutput.capitalize(event.action());
+                String capActionPR = "review_requested".equals(event.action()) ? "Requested a review for" : OutputManagement.capitalize(event.action());
                 System.out.println(capActionPR.replace("_", " ") + msjPR + event.repo());
                 break;
 
             case "pull request review":
-                String capActionPRR = EventOutput.capitalize(event.action());
+                String capActionPRR = OutputManagement.capitalize(event.action());
                 System.out.println(capActionPRR + " a review for a pull request on " + event.repo());
                 break;
 
             case "pull request review comment":
-                String capActionPRC = EventOutput.capitalize(event.action());
+                String capActionPRC = OutputManagement.capitalize(event.action());
                 System.out.println( capActionPRC + " a comment on a pull request review in " + event.repo());
                 break;
 
             case "pull request review thread":
-                String capActionPRRT = EventOutput.capitalize(event.action());
+                String capActionPRRT = OutputManagement.capitalize(event.action());
                 System.out.println(capActionPRRT + " a discussion in a pull request on " + event.repo());
                 break;
 
@@ -114,12 +113,12 @@ public class EventOutput {
                 break;
 
             case "gollum":
-                String capActionG = EventOutput.capitalize(event.action());
+                String capActionG = OutputManagement.capitalize(event.action());
                 System.out.println(capActionG + " a Wiki page in " + event.repo());
                 break;
 
             case "member" :
-                String capActionM = EventOutput.capitalize(event.action());
+                String capActionM = OutputManagement.capitalize(event.action());
                 String msj = "removed".equals(event.action()) ? " a collaborator from " : " a collaborator to ";
                 System.out.println(capActionM + msj + event.repo());
                 break;
@@ -155,7 +154,7 @@ public class EventOutput {
     }
 
     private static void showSponsorEvent (GroupSponsorEvent event){
-        System.out.println("Started sponsoring " + event.sponsored());
+        System.out.println( event.action() + " sponsoring  to" + event.sponsored());
     }
 
     //UTILS

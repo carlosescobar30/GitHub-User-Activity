@@ -63,6 +63,13 @@ Displays the help message with usage modes.
 
 
 
+
+
+
+
+
+
+
 # GitHub User Activity (ES)
 GitHub User Activity (GHActivity) es una herramienta de línea de comandos desarrollada en Java que permite a los usuarios obtener y visualizar la actividad pública reciente (hasta un máximo de 30 eventos) de un usuario específico de GitHub.
 

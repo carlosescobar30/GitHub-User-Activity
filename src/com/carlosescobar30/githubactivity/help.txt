@@ -1,0 +1,34 @@
+(ES) Este programa muestra la actividad reciente de usuarios de GitHub (hasta un máximo de 30 eventos).
+
+MODOS DE USO:
+
+1.Solo usuario:
+  GHActivity <nombre_de_usuario>
+  Muestra la actividad reciente del usuario especifico.
+
+2.Usuario + tipo de evento:
+  GHActivity <nombre_de_usuario> "<tipo_del_evento>"
+  Filtra la actividad por el tipo de evento especificado (ej. "push", "create").
+
+3.Usuario + número de eventos:
+  GHActivity <nombre_de_usuario> <numero_de_eventos>
+  Muestra la cantidad especificada de eventos para el usuario (máx. 30).
+
+4.Usuario + tipo de evento + número de eventos:
+  GHActivity <nombre_de_usuario> "<tipo_del_evento>" <numero_de_eventos>
+  Combina el filtrado por tipo y la limitación de cantidad.
+
+5.Listar eventos:
+  GHActivity --events
+  Muestra los eventos por los que filtrar y el modo correcto en que deben ser ingresados.
+
+6.Mostrar ayuda:
+  GHActivity --help
+  Muestra este texto de ayuda.
+
+* Si no hay suficientes eventos para la consulta, se mostrarán menos (o ningún) resultados de los solicitados.
+** El programa interpretara como 30 a cualquier numero mayor a 30 o menor a 1.
+
+-----------------------------------------------------------------------------------------------------------------
+
+(EN) 
